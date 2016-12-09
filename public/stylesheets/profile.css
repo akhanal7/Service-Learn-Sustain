@@ -1,0 +1,49 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+*:focus {
+  outline: none;
+}
+
+html, body {
+    height: 100%;
+    margin: 0 auto;
+}
+
+.bigwelcome {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 500;
+    letter-spacing: 0.2cm;
+    margin-top: 0;
+    margin-bottom: 20px;
+    clear: both;
+    padding-top: 50px;
+}
+
+
+tbody {
+	overflow-x: hidden;
+	overflow-y:auto;
+    height: 200px;
+    display: inline-block;
+    width: 100%;
+	flex: 0 0 auto;
+}
+
+thead {
+    display: block;
+    width: 100%;
+    height: 50px;
+	flex: 1 1 auto;
+}
+
+table tbody tr {
+    width: 100%;
+}
+
+table thead, table tbody tr {
+    display: table;
+    table-layout: fixed;
+}
