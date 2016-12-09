@@ -17,18 +17,10 @@
         $designation = $_POST['designation'];
         $category = $_POST['category'];
         $est_num = $_POST['estimate'];
-		if(isset($_POST['majorreq']))
-			$major_req = $_POST['majorreq'];
-		else
-			$major_req = '';
-		if(isset($_POST['yearreq']))
-			$year_req = $_POST['yearreq'];
-		else
-			$year_req = '';
-		if(isset($_POST['depreq']))
-			$dep_req = $_POST['depreq'];
-		else
-			$dep_req = '';
+	$major_req = $_POST['majorreq'];
+	$year_req = $_POST['yearreq'];
+	$dep_req = $_POST['depreq'];
+
         if (validateInputs($project_name, $advisor, $email, $description, $designation, $category, $est_num) === FALSE) {
             $emptyInput = TRUE;
         } elseif ($est_num <= 0) {
@@ -36,7 +28,7 @@
         } elseif (!insertNewProject($project_name, $description, $est_num, $advisor, $email, $designation)) {
             $alreadyexists = TRUE;
         } else {
-			foreach ($_POST['category'] as $val) {
+	    foreach ($_POST['category'] as $val) {
                 insertNewProject_is_category($project_name, $val);
             }
             insertNewProject($project_name, $description, $est_num, $advisor, $email, $designation);
